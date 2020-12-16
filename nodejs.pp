@@ -6,4 +6,10 @@ class { 'nodejs':
         path => '/home/ubuntu/backend'
     }
 
+
+    exec { 'npm install'
+        command => 'node . &',
+        path => '/home/ubuntu/backend'
+    }
+
 }
