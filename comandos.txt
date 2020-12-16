@@ -1,0 +1,10 @@
+[MASTER]
+
+/etc/puppet/code/environments/production/manifests
+
+sudo nano site.pp 
+
+
+
+[SLAVE]
+

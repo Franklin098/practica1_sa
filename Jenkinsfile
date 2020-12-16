@@ -24,9 +24,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                dir('frontend'){
-                    sh 'cp -a . /var/www/html'  
-                }
+                sh 'cp production.pp /etc/puppet/code/environments/production/manifests'
+                sh "ssh -n -f ubuntu@ubuntu@3.134.86.78 'sudo agent --environment-production --test' "
             }
         }
     }
