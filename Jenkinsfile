@@ -31,6 +31,7 @@ pipeline {
 
                 sh 'cp production.pp /etc/puppet/code/environments/production/manifests'
                 sh "ssh -n -f ubuntu@18.191.5.45 'sudo puppet agent --environment=production --test' "
+                sh "scp -r ./frontend/*  ubuntu@18.191.5.45:/var/www/html"
             }
         }
     }
