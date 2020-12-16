@@ -8,7 +8,7 @@ package {'apache2':
 
 file { '/tmp/status.txt':
 
-    content => 'Ngnix Installed',
+    content => 'Apache2 Installed',
     mode => '0644',
 
 }
