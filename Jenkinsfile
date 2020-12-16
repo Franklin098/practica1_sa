@@ -24,7 +24,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'cp production.pp /etc/puppet/code/environments/testing/manifests'
+                sh 'cp testing.pp /etc/puppet/code/environments/testing/manifests'
                 sh "ssh -n -f ubuntu@52.14.253.15 'sudo puppet agent --environment=testing --test' "
 
                 sh 'cp production.pp /etc/puppet/code/environments/production/manifests'
