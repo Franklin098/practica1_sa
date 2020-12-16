@@ -6,7 +6,7 @@ pipeline {
             steps {
                 dir('backend'){
                     nodejs('Node-12-7'){
-                        sh 'echo building stage'
+                        sh 'echo building'
                         sh 'npm install'
                         sh 'node . &'
                     }
