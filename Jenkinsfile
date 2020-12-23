@@ -24,24 +24,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'cp testing.pp /etc/puppet/code/environments/testing/manifests'
-                sh "scp -r ./frontend/*  ubuntu@52.14.253.15:/var/www/html"
-
-                sh 'cp nodejs.pp /etc/puppet/code/environments/testing/manifests'
-                sh "scp -r ./backend  ubuntu@52.14.253.15:/home/ubuntu"
-
-                sh "ssh -n -f ubuntu@52.14.253.15 'sudo puppet agent --environment=testing --test' "
-                
-                
-
-                sh 'cp production.pp /etc/puppet/code/environments/production/manifests'
-                sh "scp -r ./frontend/*  ubuntu@18.191.5.45:/var/www/html"
-
-                sh 'cp nodejs.pp /etc/puppet/code/environments/production/manifests'
-                sh "scp -r ./backend  ubuntu@18.191.5.45:/home/ubuntu"
-
-                sh "ssh -n -f ubuntu@18.191.5.45 'sudo puppet agent --environment=production --test' "
-                
+                sh "scp -r ./frontend/*  ubuntu@52.14.253.15:/home/"
+                sh "ssh -n -f ubuntu@52.14.253.15 'chef-client' "    
             }
         }
     }
