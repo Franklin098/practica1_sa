@@ -23,4 +23,4 @@ remote_directory "/var/www/html" do
     files_mode '0750'
     action :create
     recursive true                                                                      
-  end  
+end  
