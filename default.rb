@@ -17,7 +17,7 @@ end
 
 
 remote_directory "/var/www/html" do
-    source 'local_directory' # <-- this is your directory in files/default/local_directory
+    source '/home/frontend/html' # <-- this is your directory in files/default/local_directory
     files_owner 'root'                                                                 
     files_group 'root'
     files_mode '0750'

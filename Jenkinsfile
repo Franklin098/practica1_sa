@@ -24,8 +24,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh "scp -r ./frontend/*  ubuntu@52.14.253.15:/home/"
-                sh "ssh -n -f ubuntu@52.14.253.15 'chef-client' "    
+                sh "scp -r ./frontend/*  ubuntu@3.134.80.197:/home/"
+                sh "ssh -n -f ubuntu@3.134.80.197 'chef-client' "    
             }
         }
     }
