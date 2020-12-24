@@ -25,7 +25,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh "scp -r ./frontend/*  ubuntu@3.134.80.197:/home/ubuntu"
-                sh "ssh -n -f ubuntu@3.134.80.197 'sudo cp /home/ubuntu/html /home/ubuntu/html' "    
+                sh "ssh -n -f ubuntu@3.134.80.197 'sudo cp /home/ubuntu/html /var/www/html' "    
             }
         }
     }
