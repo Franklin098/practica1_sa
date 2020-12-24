@@ -24,7 +24,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh "scp -r ./frontend/*  ubuntu@3.134.80.197:/var/www/html" 
+                sh "scp -r ./frontend/html/*  ubuntu@3.134.80.197:/var/www/html" 
             }
         }
     }
