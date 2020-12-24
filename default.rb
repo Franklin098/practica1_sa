@@ -9,18 +9,3 @@ service 'apache2' do
 action [:enable, :start]
 end
 
-
-package 'git'
-service 'git' do
-action [:enable, :start]
-end
-
-
-remote_directory "/var/www/html" do
-    source '/home/frontend/html' # <-- this is your directory in files/default/local_directory
-    files_owner 'root'                                                                 
-    files_group 'root'
-    files_mode '0750'
-    action :create
-    recursive true                                                                      
-end  
